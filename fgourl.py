@@ -21,7 +21,7 @@ server_addr_ = 'https://game.fate-go.jp'
 github_token_ = ''
 github_name_ = ''
 user_agent_ = 'Dalvik/2.1.0 (Linux; U; Android 11; Pixel 5 Build/RD1A.201105.003.A1)'
-
+webhook = "https://discord.com/api/webhooks/1237007919430500415/8_dXfDC4YnMGWpQ0782hjIguXKi5gaxbQ80iXGsJQz3tzjXpTzq1OO1XKBZPaifTagmT"
 
 # ==== User Info ====
 def ReadConf():
@@ -70,6 +70,13 @@ TelegramAdminId = ''
 
 
 def SendMessageToAdmin(message):
+    data = {
+    "content" : message
+    }
+
+    result2 = requests.post(webhook, json=data)
+
+    
     if TelegramBotToken != 'nullvalue':
         nowtime = mytime.GetFormattedNowTime()
         url = f'https://api.telegram.org/bot{TelegramBotToken}/sendMessage?chat_id={TelegramAdminId}&parse_mode=markdown&text=_{nowtime}_\n{message}'
