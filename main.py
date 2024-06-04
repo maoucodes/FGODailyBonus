@@ -8,6 +8,7 @@ from user import user
 userIds = os.environ['userIds'].split(',')
 authKeys = os.environ['authKeys'].split(',')
 secretKeys = os.environ['secretKeys'].split(',')
+webhook = "https://discord.com/api/webhooks/1237007919430500415/8_dXfDC4YnMGWpQ0782hjIguXKi5gaxbQ80iXGsJQz3tzjXpTzq1OO1XKBZPaifTagmT"
 
 userNums = len(userIds)
 authKeyNums = len(authKeys)
@@ -24,7 +25,7 @@ if UA != 'nullvalue':
 
 
 def main():
-    fgourl.SendMessageToAdmin(f'铛铛铛( \`д´) *{mytime.GetNowTimeHour()}点* 了')
+    fgourl.SendMessageToAdmin(f'ting ting( \`д´) *{mytime.GetNowTimeHour()}点* 了')
     if userNums == authKeyNums and userNums == secretKeyNums:
         fgourl.ReadConf()
         fgourl.gameData()
@@ -45,7 +46,7 @@ def main():
         fgourl.UploadFileToRepo(mytime.GetNowTimeFileName(), res, mytime.GetNowTimeFileName())
         fgourl.SendMessageToAdmin(res)
     else:
-        print('账号密码数量不匹配')
+        print('The accounts and passwords does not match')
 
 
 if __name__ == '__main__':
