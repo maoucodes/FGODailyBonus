@@ -16,3 +16,4 @@ def sign(uuid):
     )
 
     return base64.b64encode(signature).decode('utf-8')
+
